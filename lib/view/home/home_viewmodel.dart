@@ -6,6 +6,16 @@ import 'package:mock_app_post/service/Api_service.dart';
 
 class HomeViewmodel extends ChangeNotifier {
   List<PostData> dataList = [];
+  late ApiService apiService;
+
+  HomeViewmodel() {
+    apiService = ApiService(); 
+  }
+
+  // Setter for testing purposes
+  void setApiService(ApiService service) {
+    apiService = service;
+  }
 
    fetchData() async {
     try {
